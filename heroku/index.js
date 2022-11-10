@@ -66,4 +66,35 @@ function tryme() {
   console.log('i am here');
 }
 
+//=======
+var request = require('request');
+data = { 
+  "messaging_product": "whatsapp",
+  "to": "919099290487",
+  "type": "template",
+  "template": {"name": "hello_world", "language":{"code":"en_US"}}
+ }
+
+var options = {
+  method: 'POST',
+  body: data,
+  url: 'https://graph.facebook.com/v15.0/107168948869617/messages',
+  headers: {
+    'Authorization':'Bearer EAAHTSBUHpucBAJ35Jb1VvJAS2HKbzriCAOh0PReOXJcGwPQjZAcoY4GTF2Mitu4FgbkE5Y3heR18fTFvZBiVoZAjO1c7JJMiXmNdaZC8X9eLrMByyBT7fzUQeNXR2KSSVtOROmp4rDz0DK5fcQKc7MuFl7ZCFecUEeHyq2NrmQkIUP0Pnw3ZBUBz8mrHFGq1ghvzNdbmoSEhjTGmyYm0v6'
+  }
+};
+
+function callback(error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body)
+  }
+}
+//call the request
+
+request(options, callback);
+//=====
+
+
+
+
 app.listen();
