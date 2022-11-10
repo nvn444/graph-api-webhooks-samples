@@ -63,7 +63,7 @@ app.post('/instagram', function(req, res) {
 console.log('reached the end')
 
 function tryme() {
-  res.send('i am here');
+  console.log('i am here');
 }
 
 app.listen();
