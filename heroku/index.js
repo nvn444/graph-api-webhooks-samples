@@ -23,6 +23,7 @@ var received_updates = [];
 app.get('/', function(req, res) {
   console.log(req);
   res.send('<pre>' + JSON.stringify(received_updates, null, 2) + '</pre>');
+  console.log(JSON.stringify(received_updates, null, 2));
   console.log('array length is: '+received_updates.length)
 });
 
@@ -40,7 +41,7 @@ app.get(['/facebook', '/instagram'], function(req, res) {
 app.post('/facebook', function(req, res) {
   console.log('Facebook request body:', req.body);
 console.log('testing 1 2 3 !!!');
-console.log(JSON.stringify(received_updates,null,2));
+//console.log(JSON.stringify(received_updates,null,2));
   if (!req.isXHubValid()) {
     console.log('Warning - request header X-Hub-Signature not present or invalid');
     res.sendStatus(401);
