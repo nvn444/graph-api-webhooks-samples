@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 var xhub = require('express-x-hub');
-var request = require('request');
+//var request = require('request');
 
 app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'));
@@ -62,7 +62,7 @@ app.post('/instagram', function(req, res) {
 
 
 //=======
-
+/*
 var data = { 
   "messaging_product": "whatsapp",
   "to": "919099290487",
@@ -89,7 +89,7 @@ function callback(error, response, body) {
 request(options, callback);
 //=====
 
-
+*/
 
 
 app.listen();
