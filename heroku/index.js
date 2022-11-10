@@ -60,11 +60,10 @@ app.post('/instagram', function(req, res) {
   res.sendStatus(200);
 });
 
-console.log('reached the end')
 
 //=======
 
-data = { 
+var data = { 
   "messaging_product": "whatsapp",
   "to": "919099290487",
   "type": "template",
