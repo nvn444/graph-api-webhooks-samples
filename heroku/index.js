@@ -23,7 +23,7 @@ var received_updates = [];
 app.get('/', function(req, res) {
   console.log(req);
   console.log('this is a test only');
-  res.send('<pre>' + JSON.stringify(received_updates, null, 2) + '</pre>1000');
+  res.send('<pre>' + JSON.stringify(received_updates, null, 2) + '</pre>10004');
   res.send('greetings!');
 });
 
