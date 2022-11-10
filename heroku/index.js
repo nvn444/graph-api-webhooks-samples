@@ -51,6 +51,7 @@ console.log('testing 1 2 3 !!!');
   console.log('request header X-Hub-Signature validated');
   // Process the Facebook updates here
   received_updates.unshift(req.body);
+  console.log('array length is: '+received_updates.length)
   res.sendStatus(200);
 });
 
