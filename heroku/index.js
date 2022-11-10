@@ -21,6 +21,7 @@ var received_updates = [];
 
 app.get('/', function(req, res) {
   console.log(req);
+  tryme();
   res.send('<pre>' + JSON.stringify(received_updates, null, 2) + '</pre>');
   console.log('array length is: '+received_updates.length)
 });
@@ -60,5 +61,9 @@ app.post('/instagram', function(req, res) {
 });
 
 console.log('reached the end')
+
+function tryme() {
+  res.send('i am here');
+}
 
 app.listen();
