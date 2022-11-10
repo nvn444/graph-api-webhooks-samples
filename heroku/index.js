@@ -23,8 +23,8 @@ var received_updates = [];
 app.get('/', function(req, res) {
   console.log(req);
   res.send('<pre>' + JSON.stringify(received_updates, null, 2) + '</pre>');
-  console.log(JSON.stringify(received_updates, null, 2));
-  console.log('array length is: '+received_updates.length)
+  
+
 });
 
 app.get(['/facebook', '/instagram'], function(req, res) {
@@ -51,7 +51,8 @@ console.log('testing 1 2 3 !!!');
   console.log('request header X-Hub-Signature validated');
   // Process the Facebook updates here
   received_updates.unshift(req.body);
-  console.log('array length is: '+received_updates.length)
+  console.log('array length is: '+received_updates.length);
+  console.log(JSON.stringify(received_updates, null, 2));
   res.sendStatus(200);
 });
 
