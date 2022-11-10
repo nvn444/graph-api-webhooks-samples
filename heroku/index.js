@@ -16,15 +16,13 @@ app.listen(app.get('port'));
 
 app.use(xhub({ algorithm: 'sha1', secret: process.env.APP_SECRET }));
 app.use(bodyParser.json());
-console.log('reached here');
 var token = process.env.TOKEN || 'token';
 var received_updates = [];
 
 app.get('/', function(req, res) {
   console.log(req);
-  console.log('this is a test only');
-  res.send('<pre>' + JSON.stringify(received_updates, null, 2) + '</pre>10004');
-  res.send('greetings!');
+  res.send('<pre>' + JSON.stringify(received_updates, null, 2) + '</pre>');
+  console.log('array length is: '+received_updates.length)
 });
 
 app.get(['/facebook', '/instagram'], function(req, res) {
