@@ -114,11 +114,7 @@ const options = {
 
 const url = 'https://jsonplaceholder.typicode.com/todos/1';
   
-const request = https.request(url, (response) => {
-    let data = '';
-    response.on('data', (chunk) => {
-        data = data + chunk.toString();
-    });
+const request = https.request(url,response);
   
     response.on('end', () => {
         const body = JSON.parse(data);
