@@ -112,24 +112,24 @@ const options = {
   }
 };
 
-const req = https.request(options, (res) => {
-  let data = '';
-
-  console.log('Status Code:', res.statusCode);
-
-  res.on('data', (chunk) => {
-      data += chunk;
-  });
-
-  res.on('end', () => {
-      console.log('Body: ', JSON.parse(data));
-  });
-
-}).on("error", (err) => {
-  console.log("Error: ", err.message);
+const url = 'https://jsonplaceholder.typicode.com/todos/1';
+  
+const request = https.request(url, (response) => {
+    let data = '';
+    response.on('data', (chunk) => {
+        data = data + chunk.toString();
+    });
+  
+    response.on('end', () => {
+        const body = JSON.parse(data);
+        console.log(body);
+    });
+})
+  
+request.on('error', (error) => {
+    console.log('An error', error);
 });
-
-req.write(data);
-req.end();
+  
+request.end(); 
 
 app.listen();
