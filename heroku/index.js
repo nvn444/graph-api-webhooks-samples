@@ -97,5 +97,20 @@ request(options, callback);
 
 */
 
+const data = JSON.stringify({
+  name: 'John Doe',
+  job: 'Content Writer'
+});
+
+const options = {
+  hostname: 'reqres.in',
+  path: '/api/users',
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json',
+      'Content-Length': data.length
+  }
+};
+
 
 app.listen();
